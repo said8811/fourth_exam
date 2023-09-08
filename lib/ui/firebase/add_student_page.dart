@@ -1,7 +1,7 @@
-import 'package:fifth_exam/data/models/student/studenmodel.dart';
-import 'package:fifth_exam/data/services/uploader/imageUpload.dart';
+import 'package:fifth_exam/data/models/student/student_model.dart';
+import 'package:fifth_exam/data/services/uploader/image_upload.dart';
 import 'package:fifth_exam/utils/toast.dart';
-import 'package:fifth_exam/view_models/studentViewmodel.dart';
+import 'package:fifth_exam/view_models/student_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -48,7 +48,7 @@ class _AddStudentPageState extends State<AddStudentPage> {
             imageUrl.isEmpty
                 ? const SizedBox(height: 2)
                 : Image.network(
-                    "$imageUrl",
+                    imageUrl,
                     height: 100,
                   ),
             ElevatedButton(

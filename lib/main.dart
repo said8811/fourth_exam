@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fifth_exam/data/repository/student_repository.dart';
 import 'package:fifth_exam/ui/home_screen.dart';
-import 'package:fifth_exam/view_models/studentViewmodel.dart';
+import 'package:fifth_exam/view_models/student_viewmodel.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +15,7 @@ void main() async {
             studentRepository:
                 StudentRepository(firestore: FirebaseFirestore.instance)))
   ], child: const MyApp()));
-}git init
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

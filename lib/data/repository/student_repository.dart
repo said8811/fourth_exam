@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fifth_exam/data/models/student/studenmodel.dart';
+import 'package:fifth_exam/data/models/student/student_model.dart';
 
 class StudentRepository {
   final FirebaseFirestore _firestore;
@@ -14,9 +14,8 @@ class StudentRepository {
       await _firestore.collection("students").doc(newStudent.id).update({
         "studentId": newStudent.id,
       });
-      print("Student qo'shildi");
-    } on FirebaseException catch (er) {
-      print(er.message.toString());
+    } on FirebaseException {
+      rethrow;
     }
   }
 
@@ -26,19 +25,16 @@ class StudentRepository {
           .collection("students")
           .doc(studentModel.studentId)
           .update(studentModel.toJson());
-
-      print("Student yangilandi!");
-    } on FirebaseException catch (er) {
-      print(er.message.toString());
+    } on FirebaseException {
+      rethrow;
     }
   }
 
   Future<void> deleteStudent({required String docId}) async {
     try {
       await _firestore.collection("students").doc(docId).delete();
-      print("Student o'chirildi!");
-    } on FirebaseException catch (er) {
-      print(er.message.toString());
+    } on FirebaseException {
+      rethrow;
     }
   }
 

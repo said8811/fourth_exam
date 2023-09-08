@@ -1,4 +1,4 @@
-import 'package:fifth_exam/data/models/student/studenmodel.dart';
+import 'package:fifth_exam/data/models/student/student_model.dart';
 import 'package:fifth_exam/data/repository/student_repository.dart';
 import 'package:flutter/cupertino.dart';
 

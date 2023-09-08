@@ -1,12 +1,11 @@
-import 'package:fifth_exam/data/models/student/studenmodel.dart';
-import 'package:fifth_exam/data/services/uploader/imageUpload.dart';
-import 'package:fifth_exam/view_models/studentViewmodel.dart';
+import 'package:fifth_exam/data/models/student/student_model.dart';
+import 'package:fifth_exam/data/services/uploader/image_upload.dart';
+import 'package:fifth_exam/view_models/student_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class UpdatePage extends StatefulWidget {
   StudentModel studentModel;
   UpdatePage({super.key, required this.studentModel});
@@ -51,7 +50,7 @@ class _UpdatePageState extends State<UpdatePage> {
                   style: TextStyle(fontSize: 24),
                 )),
             Image.network(
-              "${widget.studentModel.imageUrl}",
+              widget.studentModel.imageUrl,
               height: 100,
             ),
             ElevatedButton(

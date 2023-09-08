@@ -51,15 +51,12 @@ class ApiClient {
       return handler.next(error);
     }, onRequest:
             (RequestOptions requestOptions, RequestInterceptorHandler handler) {
-      print("request");
       String currentLocale = "uz";
       requestOptions.headers["Accept"] = "application/json";
       requestOptions.headers["Accept-Language"] =
           currentLocale.isEmpty ? "ru" : currentLocale;
       return handler.next(requestOptions);
     }, onResponse: (Response response, ResponseInterceptorHandler handler) {
-      print("request");
-
       return handler.next(response);
     }));
   }

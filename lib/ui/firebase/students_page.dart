@@ -1,6 +1,6 @@
 import 'package:fifth_exam/ui/firebase/add_student_page.dart';
 import 'package:fifth_exam/ui/firebase/update_page.dart';
-import 'package:fifth_exam/view_models/studentViewmodel.dart';
+import 'package:fifth_exam/view_models/student_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -77,9 +77,7 @@ class StudentsPage extends StatelessWidget {
                           );
                         },
                       )
-                    : Container(
-                        child: const CircularProgressIndicator(),
-                      );
+                    : const CircularProgressIndicator();
               },
             )
           ],

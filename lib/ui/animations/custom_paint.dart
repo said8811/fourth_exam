@@ -23,17 +23,12 @@ class _Example9State extends State<Example9> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 500,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [MyColors.C_green, MyColors.C_green05])),
+                  height: 400,
+                  decoration: BoxDecoration(color: MyColors.C_green),
                   child: CustomPaint(
-                    size: const Size(400, 400),
+                    size: const Size(500, 500),
                     painter: MyPainter(),
                   ),
-                ),
-                const SizedBox(
-                  height: 50,
                 ),
               ],
             ),
@@ -49,15 +44,15 @@ class MyPainter extends CustomPainter {
 
     Path paths = Path();
 
-    paths.lineTo(0, size.height * 0.5);
+    paths.lineTo(0, size.height * 0.3);
 
     paths.cubicTo(
-      size.width * 0.3,
+      size.width * 0.7,
       size.height * 0.2,
-      size.width * 0.5,
-      size.height * 0.7,
-      size.width,
-      size.height * 0.5,
+      size.width * 0.1,
+      size.height * 0.3,
+      size.width * 0.3,
+      size.height * 0.3,
     );
 
     paths.lineTo(size.width, 0);

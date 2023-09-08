@@ -1,7 +1,5 @@
-import 'package:fifth_exam/ui/animations/customPaint.dart';
+import 'package:fifth_exam/ui/animations/custom_paint.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Animations extends StatefulWidget {
   const Animations({super.key});
@@ -13,7 +11,8 @@ class Animations extends StatefulWidget {
 class _AnimationsState extends State<Animations> {
   Color colors = Colors.grey;
   _grenn() {
-    Future.delayed(Duration(seconds: 2)).then((value) => colors = Colors.green);
+    Future.delayed(const Duration(seconds: 2))
+        .then((value) => colors = Colors.green);
   }
 
   @override
@@ -33,7 +32,7 @@ class _AnimationsState extends State<Animations> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => const Example9()));
               },
-              icon: Icon(Icons.change_circle))
+              icon: const Icon(Icons.change_circle))
         ],
       ),
       body: Center(
@@ -44,7 +43,7 @@ class _AnimationsState extends State<Animations> {
             return Stack(
               children: [
                 Center(
-                  child: Container(
+                  child: SizedBox(
                     width: 150,
                     height: 150,
                     child: CircularProgressIndicator(

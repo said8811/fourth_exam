@@ -1,9 +1,7 @@
 import 'package:fifth_exam/data/repository/users_repo.dart';
 import 'package:fifth_exam/data/services/api_service/users_api.dart';
-import 'package:fifth_exam/view_models/usersViewmodel.dart';
+import 'package:fifth_exam/view_models/users_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 
 class UsersPage extends StatefulWidget {
@@ -19,16 +17,14 @@ class _UsersPageState extends State<UsersPage> {
     return Scaffold(
       appBar: AppBar(title: const Text("Users")),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: ChangeNotifierProvider(
           create: (_) => UserViewModel(
               uSerRepository: USerRepository(usersApi: UsersApi())),
           builder: (context, child) {
             var users = context.watch<UserViewModel>();
             if (users.error.isNotEmpty) {
-              return Container(
-                child: Text(users.error),
-              );
+              return Text(users.error);
             }
 
             return users.users != null
@@ -69,9 +65,7 @@ class _UsersPageState extends State<UsersPage> {
                       return const SizedBox(height: 15);
                     },
                     itemCount: users.users!.length)
-                : Container(
-                    child: const Center(child: CircularProgressIndicator()),
-                  );
+                : const Center(child: CircularProgressIndicator());
           },
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:fifth_exam/data/models/my_response/my_responce.dart';
-import 'package:fifth_exam/data/models/users/usersModel.dart';
+import 'package:fifth_exam/data/models/my_response/my_response.dart';
+import 'package:fifth_exam/data/models/users/user_model.dart';
 import 'package:fifth_exam/data/services/api_service/api_client.dart';
 
 class UsersApi extends ApiClient {

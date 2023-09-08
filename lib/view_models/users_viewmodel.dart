@@ -1,5 +1,5 @@
-import 'package:fifth_exam/data/models/my_response/my_responce.dart';
-import 'package:fifth_exam/data/models/users/usersModel.dart';
+import 'package:fifth_exam/data/models/my_response/my_response.dart';
+import 'package:fifth_exam/data/models/users/user_model.dart';
 import 'package:fifth_exam/data/repository/users_repo.dart';
 import 'package:flutter/cupertino.dart';
 
